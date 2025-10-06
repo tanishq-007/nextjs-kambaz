@@ -22,7 +22,7 @@ export default function KambazNavigation() {
        </Link>
      </ListGroupItem>
      <ListGroupItem className="border-0 bg-white text-center">
-       <Link href="/Dashboard" id="wd-dashboard-link" className="text-black text-decoration-none">
+       <Link href="/Dashboard" id="wd-dashboard-link" className="text-danger text-decoration-none">
          <AiOutlineDashboard className="fs-1 text-danger" />
          
          Dashboard
