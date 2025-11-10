@@ -1,10 +1,10 @@
 [
     {
         "_id": "123",
-        "username": "iron_man",
-        "password": "stark123",
-        "firstName": "Tony",
-        "lastName": "Stark",
+        "username": "Tanishq",
+        "password": "webdev",
+        "firstName": "tanishq",
+        "lastName": "n",
         "email": "tony@stark.com",
         "dob": "1970-05-29T00:00:00.000Z",
         "role": "FACULTY",
