@@ -16,7 +16,10 @@ export default function Signin() {
     const router = useRouter();
 
     const signin = async () => {
+            console.log("Attempting signin with:", credentials); // Debug log
+      console.log("API URL:", client.USERS_API);
         const user = await client.signin(credentials);
+           console.log("Signin response:", user); 
         if (!user) return;
         dispatch(setCurrentUser(user));
         dispatch(loadEnrollmentsFromStorage());
