@@ -1,4 +1,5 @@
 "use client";
+import * as client from "../client";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { setCurrentUser } from "../reducer";
@@ -12,23 +13,14 @@ export default function Signin() {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const [credentials, setCredentials] = useState<any>({});
     const dispatch = useDispatch();
-    const router = useRouter();  // Use useRouter instead of redirect
+    const router = useRouter();
 
-    const signin = () => {
-        const user = db.users.find(
-            // eslint-disable-next-line @typescript-eslint/no-explicit-any
-            (u: any) =>
-                u.username === credentials.username &&
-                u.password === credentials.password
-        );
-        if (!user) {
-            alert("Invalid credentials");  // Optional: add error handling
-            return;
-        }
+    const signin = async () => {
+        const user = await client.signin(credentials);
+        if (!user) return;
         dispatch(setCurrentUser(user));
-        // Load enrollments from localStorage when user signs in
         dispatch(loadEnrollmentsFromStorage());
-        router.push("/Dashboard");  // Use router.push instead of redirect
+        router.push("/Dashboard");
     };
 
     return (
