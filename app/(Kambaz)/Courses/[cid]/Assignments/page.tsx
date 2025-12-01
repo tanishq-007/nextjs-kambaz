@@ -61,7 +61,7 @@ export default function Assignments() {
                 {isFaculty && (
                     <div>
                         <button className="btn btn-secondary me-2">
-                            <FaPlus className="me-1" /> Groups
+                            <FaPlus className="me-1" /> Group
                         </button>
                         <button
                             className="btn btn-danger"

@@ -44,11 +44,11 @@ export default function Dashboard() {
     const fetchCourses = async () => {
         try {
             setIsLoading(true);
-            if (currentUser?.role === "FACULTY") {
+            if (currentUser?.role === "FACULTY" ) {
                 const allCourses = await client.fetchAllCourses();
                 dispatch(setCourses(allCourses));
             } else if (showAllCourses) {
-                const allCourses = await client.fetchAllCourses();
+                const allCourses = await client.fetchAllCoursesWithEnrollmentStatus();
                 dispatch(setCourses(allCourses));
             } else {
                 const enrolledCourses = await client.findMyCourses();
